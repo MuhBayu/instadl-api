@@ -50,9 +50,9 @@ export default async function(req: NowRequest, res: NowResponse) {
             }
         }
         mcache.put(key, response, 60 * 1000);
-        return res.json(response)
+        res.json(response)
     } else {
-        return res.status(500).json({
+        res.status(500).json({
             success: false,
             message: "Make sure the link is correct or the profile is not private",
             error: "Failed to fetch",

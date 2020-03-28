@@ -30,7 +30,7 @@ export default async function(req: NowRequest, res: NowResponse) {
             is_verified: profile.is_verified,
         }
         mcache.put(key, response, 60 * 1000);
-        return res.json(response)
+        res.json(response)
     } else {
         res.status(500).json({
             success: false,
