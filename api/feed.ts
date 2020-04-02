@@ -41,14 +41,14 @@ export default async function(req: NowRequest, res: NowResponse) {
                 let media_child_node = mediachild.node
                 medias.push({
                     "url": media_child_node.is_video ? media_child_node.video_url : media_child_node.display_url,
-                    "display_url": media_child_node.is_video ? media_child_node.display_url : media_child_node.display,
+                    "display_url": media_child_node.display_url,
                     "type": media_child_node.is_video ? "video" : "photo"
                 })
             })
         } else {
             medias.push({
                 "url": shortcode_media.is_video ? shortcode_media.video_url : shortcode_media.display_url,
-                "display_url": shortcode_media.is_video ? shortcode_media.display_url : shortcode_media.display,
+                "display_url": shortcode_media.display_url,
                 "type": shortcode_media.is_video ? "video" : "photo"
             })
         }
